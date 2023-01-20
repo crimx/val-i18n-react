@@ -6,6 +6,7 @@ import {
   useMemo,
   Fragment,
   createElement,
+  ReactElement,
 } from "react";
 
 export interface TProps {
@@ -61,6 +62,9 @@ export const Trans: FC<PropsWithChildren<TProps>> = ({ message, children }) => {
     return slices;
   }, [message]);
 
+  // no template
+  if (slices.length === 1) return createElement(Fragment, null, message);
+
   const slots: Record<string, ReactNode> = {};
   let hasSlot = false;
 
@@ -80,7 +84,7 @@ export const Trans: FC<PropsWithChildren<TProps>> = ({ message, children }) => {
       copy[i] = slots[slices[i]] || `{{${slices[i]}}}`;
     }
   } else {
-    copy[1] = children;
+    copy[1] = children || `{{${slices[1]}}}`;
   }
   return createElement(Fragment, null, copy);
 };
