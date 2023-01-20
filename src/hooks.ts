@@ -11,12 +11,6 @@ export const useI18n = (): I18n => {
   return i18n;
 };
 
-export const useTranslate = (): TFunction => {
-  const i18n = useI18n();
-  return useVal(i18n.t$);
-};
+export const useTranslate = (): TFunction => useVal(useI18n().t$);
 
-export const useLang = (): LocaleLang => {
-  const i18n = useI18n();
-  return useVal(i18n.lang$);
-};
+export const useLang = (): LocaleLang => useVal(useI18n().lang$);
