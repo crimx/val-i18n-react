@@ -4,5 +4,5 @@
     "target": "ESNext",
     "noEmit": true
   },
-  "include": ["./**/*.test.ts"]
+  "include": ["./**/*.test.ts", "./**/*.test.tsx"]
 }
