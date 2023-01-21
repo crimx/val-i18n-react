@@ -1,12 +1,11 @@
 import {
-  FC,
-  PropsWithChildren,
+  type FC,
+  type PropsWithChildren,
+  type ReactNode,
   isValidElement,
-  ReactNode,
   useMemo,
-  Fragment,
   createElement,
-  ReactElement,
+  Fragment,
 } from "react";
 
 export interface TProps {
