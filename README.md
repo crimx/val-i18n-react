@@ -27,7 +27,7 @@ npm add val-i18n-react val-i18n value-enhancer
 - `useLang` hook to get updated `i18n.lang`.
 - `useI18n` hook to get i18n instance.
 - `I18nContext` to set i18n context.
-- `<Trans>` component to insert React components into translation messages.
+- `<Trans>` component to insert React elements into translation messages.
 
 ## Usage
 
@@ -53,7 +53,7 @@ const App = () => {
 
 ### Trans Component
 
-To insert React components into the translation message:
+To insert React elements into the translation message:
 
 ```jsx
 import { Trans, useTranslate } from "val-i18n-react";
