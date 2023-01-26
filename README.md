@@ -31,6 +31,8 @@ npm add val-i18n-react val-i18n value-enhancer
 
 ## Usage
 
+See live example on [CodeSandbox](https://codesandbox.io/s/val-i18n-react-o887n0).
+
 ```jsx
 import { I18n } from "val-i18n";
 import { I18nContext, useTranslate } from "val-i18n-react";
