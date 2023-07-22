@@ -28,7 +28,7 @@
     "dist"
   ],
   "scripts": {
-    "prepublish": "pnpm run build",
+    "prepublishOnly": "pnpm run build",
     "lint": "eslint --ext .ts,.tsx . && prettier --check .",
     "test": "jest --coverage",
     "types": "cross-env NODE_ENV=production tsc --declaration --emitDeclarationOnly --jsx react --esModuleInterop --outDir dist",
