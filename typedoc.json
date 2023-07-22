@@ -1,0 +1,20 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["./src/main.ts"],
+  "out": "docs",
+  "customCss": "./assets/docs.css",
+  "visibilityFilters": {},
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "excludeInternal": true,
+  "cleanOutputDir": true,
+  "includeVersion": true,
+  "hideGenerator": true,
+  "externalSymbolLinkMappings": {
+    "val-i18n": {
+      "TFunction": "https://crimx.github.io/val-i18n/types/TFunction.html",
+      "I18n": "https://crimx.github.io/val-i18n/classes/I18n.html",
+      "LocaleLang": "https://crimx.github.io/val-i18n/types/LocaleLang.html"
+    }
+  }
+}
