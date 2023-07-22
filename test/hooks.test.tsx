@@ -1,16 +1,24 @@
-import React, { type PropsWithChildren } from "react";
-import { renderHook, act } from "@testing-library/react";
+import type { PropsWithChildren } from "react";
+import type { Locales } from "val-i18n";
 
-import { describe, it, expect } from "@jest/globals";
-import { useI18n, I18nContext, useTranslate, useLang } from "../src/main";
-import { I18n, Locales } from "val-i18n";
+import { describe, expect, it } from "@jest/globals";
+import { act, renderHook } from "@testing-library/react";
+import React from "react";
+import { I18n } from "val-i18n";
+import {
+  I18nContext,
+  I18nProvider,
+  useI18n,
+  useLang,
+  useTranslate,
+} from "../src/main";
 
 describe("useI18n", () => {
   it("should get i18n instance", () => {
     const locales: Locales = { en: { fruit: "apple" } };
     const i18n = new I18n("en", locales);
     const wrapper: React.FC<PropsWithChildren> = ({ children }) => (
-      <I18nContext.Provider value={i18n}>{children}</I18nContext.Provider>
+      <I18nProvider i18n={i18n}>{children}</I18nProvider>
     );
     const { result } = renderHook(() => useI18n(), { wrapper });
 

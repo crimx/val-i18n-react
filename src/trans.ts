@@ -1,12 +1,5 @@
-import {
-  type FC,
-  type PropsWithChildren,
-  type ReactNode,
-  isValidElement,
-  useMemo,
-  createElement,
-  Fragment,
-} from "react";
+import type { FC, PropsWithChildren, ReactNode } from "react";
+import { isValidElement, useMemo, createElement, Fragment } from "react";
 
 export interface TProps {
   /** Locale translation message */

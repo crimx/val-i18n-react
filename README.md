@@ -23,11 +23,11 @@ npm add val-i18n-react val-i18n value-enhancer
 
 ## API
 
-- `useTranslate` hook to get updated `i18n.t`.
-- `useLang` hook to get updated `i18n.lang`.
-- `useI18n` hook to get i18n instance.
-- `I18nContext` to set i18n context.
-- `<Trans>` component to insert React elements into translation messages.
+- `I18nProvider` to provide `i18n` context for descendant components.
+- `useTranslate` hook to subscribe and get the latest `i18n.t`.
+- `useLang` hook to subscribe and get the latest `i18n.lang`.
+- `useI18n` hook to subscribe and get the latest `i18n` instance.
+- `<Trans>` component to insert React elements into translation template messages.
 
 ## Usage
 
@@ -35,7 +35,7 @@ See live example on [CodeSandbox](https://codesandbox.io/s/val-i18n-react-o887n0
 
 ```jsx
 import { I18n } from "val-i18n";
-import { I18nContext, useTranslate } from "val-i18n-react";
+import { I18nProvider, useTranslate } from "val-i18n-react";
 
 const i18n = new I18n("en", { en: { fruit: "apple" } });
 
@@ -46,9 +46,9 @@ const MyComponent = () => {
 
 const App = () => {
   return (
-    <I18nContext.Provider value={i18n}>
+    <I18nProvider i18n={i18n}>
       <MyComponent />
-    </I18nContext.Provider>
+    </I18nProvider>
   );
 };
 ```
@@ -59,7 +59,7 @@ To insert React elements into the translation message:
 
 ```jsx
 import { Trans, useTranslate } from "val-i18n-react";
-import { I18n } from "val-i18n";
+import { I18n, I18nProvider } from "val-i18n";
 
 const locales = {
   en: {
@@ -86,9 +86,9 @@ const MyComponent = () => {
 
 const App = () => {
   return (
-    <I18nContext.Provider value={i18n}>
+    <I18nProvider i18n={i18n}>
       <MyComponent />
-    </I18nContext.Provider>
+    </I18nProvider>
   );
 };
 ```
