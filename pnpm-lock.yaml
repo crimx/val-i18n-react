@@ -76,13 +76,13 @@ devDependencies:
     version: 4.9.5
   use-value-enhancer:
     specifier: ^2.1.0
-    version: 2.1.0(react@18.2.0)(value-enhancer@2.4.3)
+    version: 2.1.0(react@18.2.0)(value-enhancer@3.0.2)
   val-i18n:
-    specifier: ^0.1.5
-    version: 0.1.5(value-enhancer@2.4.3)
+    specifier: ^0.1.6
+    version: 0.1.6(value-enhancer@3.0.2)
   value-enhancer:
-    specifier: ^2.4.3
-    version: 2.4.3
+    specifier: ^3.0.2
+    version: 3.0.2
   yoctocolors:
     specifier: ^1.0.0
     version: 1.0.0
@@ -5343,14 +5343,14 @@ packages:
       requires-port: 1.0.0
     dev: true
 
-  /use-value-enhancer@2.1.0(react@18.2.0)(value-enhancer@2.4.3):
+  /use-value-enhancer@2.1.0(react@18.2.0)(value-enhancer@3.0.2):
     resolution: {integrity: sha512-Ij0fEDF28Sl2fzqkK91huh1gpeF8j+nw4uZ+8PyeU4Lo/oR1JOC45XxO+znOeiZmuQ7P2qOv20Nry0rBKLjnbQ==}
     peerDependencies:
       react: '>=16'
       value-enhancer: '>=2.3.1'
     dependencies:
       react: 18.2.0
-      value-enhancer: 2.4.3
+      value-enhancer: 3.0.2
     dev: true
 
   /util-deprecate@1.0.2:
@@ -5370,12 +5370,12 @@ packages:
       convert-source-map: 1.9.0
     dev: true
 
-  /val-i18n@0.1.5(value-enhancer@2.4.3):
-    resolution: {integrity: sha512-qSddxNFxM2pCI9Geh3MGZzPhUGPicz41nOoknTk9kjp2LXaXQuxoNQ3Vh1R9xaLdWoeb8tL7hfVTVhgdch2HKA==}
+  /val-i18n@0.1.6(value-enhancer@3.0.2):
+    resolution: {integrity: sha512-I1nu63L27KiUZuB2eG41duYo9KXbFTshxnT4ulOBjNFd3QFqBfAheYKC5ok147myy/ne1tyWTxZTtQ/2swvRGA==}
     peerDependencies:
-      value-enhancer: '2'
+      value-enhancer: '>=2 <=3'
     dependencies:
-      value-enhancer: 2.4.3
+      value-enhancer: 3.0.2
     dev: true
 
   /validate-npm-package-license@3.0.4:
@@ -5385,8 +5385,8 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /value-enhancer@2.4.3:
-    resolution: {integrity: sha512-RtCE3qL1P5z03dkFK3ok1v1ItMspW9OHSdPmS+ATJ76Ot1HVo9LvOSqpIxpM8hpwMX6VV/+c0Tid73quTh6J4A==}
+  /value-enhancer@3.0.2:
+    resolution: {integrity: sha512-5CgRai8X8Jl81NGDm0VrCvn4dzg9noltvPyTAZoZQRfLTNW/mv/giqxXCvI91RLuQ6N4Y20IsakMs/6KUTBSEw==}
     dev: true
 
   /vscode-oniguruma@1.7.0:
