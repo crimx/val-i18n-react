@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -75,14 +75,14 @@ devDependencies:
     specifier: ^4.9.5
     version: 4.9.5
   use-value-enhancer:
-    specifier: ^2.1.0
-    version: 2.1.0(react@18.2.0)(value-enhancer@3.0.2)
+    specifier: ^4.0.0
+    version: 4.0.0(react@18.2.0)(value-enhancer@4.0.0)
   val-i18n:
-    specifier: ^0.1.6
-    version: 0.1.6(value-enhancer@3.0.2)
+    specifier: ^0.1.7
+    version: 0.1.7(value-enhancer@4.0.0)
   value-enhancer:
-    specifier: ^3.0.2
-    version: 3.0.2
+    specifier: ^4.0.0
+    version: 4.0.0
   yoctocolors:
     specifier: ^1.0.0
     version: 1.0.0
@@ -5343,14 +5343,14 @@ packages:
       requires-port: 1.0.0
     dev: true
 
-  /use-value-enhancer@2.1.0(react@18.2.0)(value-enhancer@3.0.2):
-    resolution: {integrity: sha512-Ij0fEDF28Sl2fzqkK91huh1gpeF8j+nw4uZ+8PyeU4Lo/oR1JOC45XxO+znOeiZmuQ7P2qOv20Nry0rBKLjnbQ==}
+  /use-value-enhancer@4.0.0(react@18.2.0)(value-enhancer@4.0.0):
+    resolution: {integrity: sha512-Ps/Lg6XSb3N3xzJ/9suDGP/ivtCXKaU3epf8d9LpOtvW5sBpuQyNlzGYoKngBx7PoY7FN3LbRxg/qt/S8q1YVQ==}
     peerDependencies:
       react: '>=16'
-      value-enhancer: '>=2.3.1'
+      value-enhancer: '>=3 <=4'
     dependencies:
       react: 18.2.0
-      value-enhancer: 3.0.2
+      value-enhancer: 4.0.0
     dev: true
 
   /util-deprecate@1.0.2:
@@ -5370,12 +5370,12 @@ packages:
       convert-source-map: 1.9.0
     dev: true
 
-  /val-i18n@0.1.6(value-enhancer@3.0.2):
-    resolution: {integrity: sha512-I1nu63L27KiUZuB2eG41duYo9KXbFTshxnT4ulOBjNFd3QFqBfAheYKC5ok147myy/ne1tyWTxZTtQ/2swvRGA==}
+  /val-i18n@0.1.7(value-enhancer@4.0.0):
+    resolution: {integrity: sha512-bfTYCor2ahxemw/oTSCK8hp6EBbpLhKazpfuzoy49/MX5su/Ogwh6phS8aeloCzxuDt+be5krSXCvKYGQzDqnQ==}
     peerDependencies:
-      value-enhancer: '>=2 <=3'
+      value-enhancer: '>= 2 <=4'
     dependencies:
-      value-enhancer: 3.0.2
+      value-enhancer: 4.0.0
     dev: true
 
   /validate-npm-package-license@3.0.4:
@@ -5385,8 +5385,8 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /value-enhancer@3.0.2:
-    resolution: {integrity: sha512-5CgRai8X8Jl81NGDm0VrCvn4dzg9noltvPyTAZoZQRfLTNW/mv/giqxXCvI91RLuQ6N4Y20IsakMs/6KUTBSEw==}
+  /value-enhancer@4.0.0:
+    resolution: {integrity: sha512-li17sukPM75Ian+QsQt5UJXPNgP1ZWTSkl8FI9NXrKldic7x+ctbQ0fZgG7q38fPjsKGYghKWVsL8I29NHu4Qg==}
     dev: true
 
   /vscode-oniguruma@1.7.0:
