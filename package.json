@@ -40,7 +40,8 @@
   },
   "peerDependencies": {
     "react": ">=16",
-    "val-i18n": "0"
+    "val-i18n": "0",
+    "use-value-enhancer": "<=5"
   },
   "devDependencies": {
     "@jest/globals": "^28.1.3",
@@ -66,9 +67,9 @@
     "tsup": "^6.7.0",
     "typedoc": "^0.24.8",
     "typescript": "^4.9.5",
-    "use-value-enhancer": "^4.0.0",
-    "val-i18n": "^0.1.7",
-    "value-enhancer": "^4.0.0",
+    "use-value-enhancer": "^5.0.0",
+    "val-i18n": "^0.1.10",
+    "value-enhancer": "^5.0.0",
     "yoctocolors": "^1.0.0"
   }
 }

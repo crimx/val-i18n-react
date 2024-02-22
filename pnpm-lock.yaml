@@ -75,14 +75,14 @@ devDependencies:
     specifier: ^4.9.5
     version: 4.9.5
   use-value-enhancer:
-    specifier: ^4.0.0
-    version: 4.0.0(react@18.2.0)(value-enhancer@4.0.0)
+    specifier: ^5.0.0
+    version: 5.0.0(react@18.2.0)(value-enhancer@5.0.0)
   val-i18n:
-    specifier: ^0.1.7
-    version: 0.1.7(value-enhancer@4.0.0)
+    specifier: ^0.1.10
+    version: 0.1.10(value-enhancer@5.0.0)
   value-enhancer:
-    specifier: ^4.0.0
-    version: 4.0.0
+    specifier: ^5.0.0
+    version: 5.0.0
   yoctocolors:
     specifier: ^1.0.0
     version: 1.0.0
@@ -5343,14 +5343,14 @@ packages:
       requires-port: 1.0.0
     dev: true
 
-  /use-value-enhancer@4.0.0(react@18.2.0)(value-enhancer@4.0.0):
-    resolution: {integrity: sha512-Ps/Lg6XSb3N3xzJ/9suDGP/ivtCXKaU3epf8d9LpOtvW5sBpuQyNlzGYoKngBx7PoY7FN3LbRxg/qt/S8q1YVQ==}
+  /use-value-enhancer@5.0.0(react@18.2.0)(value-enhancer@5.0.0):
+    resolution: {integrity: sha512-qK4+Zo5XZ067zp9RgPxbtPXCi9MoLPvW58els/fZsVPFykLprvSIJALtBq3VTbVQkeikXIxlX+iZ0oHijhwhlg==}
     peerDependencies:
       react: '>=16'
-      value-enhancer: '>=3 <=4'
+      value-enhancer: '5'
     dependencies:
       react: 18.2.0
-      value-enhancer: 4.0.0
+      value-enhancer: 5.0.0
     dev: true
 
   /util-deprecate@1.0.2:
@@ -5370,12 +5370,12 @@ packages:
       convert-source-map: 1.9.0
     dev: true
 
-  /val-i18n@0.1.7(value-enhancer@4.0.0):
-    resolution: {integrity: sha512-bfTYCor2ahxemw/oTSCK8hp6EBbpLhKazpfuzoy49/MX5su/Ogwh6phS8aeloCzxuDt+be5krSXCvKYGQzDqnQ==}
+  /val-i18n@0.1.10(value-enhancer@5.0.0):
+    resolution: {integrity: sha512-dqC/Q/Z/80hzRG4uAzWEiap1GIoPPo+gzvWtDtAvtNQi+rqMdI3GneGjkKlTKw5qnp+n+kwvoO8JvYn8sXvOxw==}
     peerDependencies:
-      value-enhancer: '>= 2 <=4'
+      value-enhancer: '>= 2 <=5'
     dependencies:
-      value-enhancer: 4.0.0
+      value-enhancer: 5.0.0
     dev: true
 
   /validate-npm-package-license@3.0.4:
@@ -5385,8 +5385,8 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /value-enhancer@4.0.0:
-    resolution: {integrity: sha512-li17sukPM75Ian+QsQt5UJXPNgP1ZWTSkl8FI9NXrKldic7x+ctbQ0fZgG7q38fPjsKGYghKWVsL8I29NHu4Qg==}
+  /value-enhancer@5.0.0:
+    resolution: {integrity: sha512-cuZg84OulDI4lgNf43JyPPaMUtqpQd66Y7ktxgVJOrzBZYDaP4S9mDe8Dz/ZFl/7utTGb1ITQNNHuVNfmr1Yww==}
     dev: true
 
   /vscode-oniguruma@1.7.0:
