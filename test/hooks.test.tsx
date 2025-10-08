@@ -5,13 +5,7 @@ import { describe, expect, it } from "@jest/globals";
 import { act, renderHook } from "@testing-library/react";
 import React from "react";
 import { I18n } from "val-i18n";
-import {
-  I18nContext,
-  I18nProvider,
-  useI18n,
-  useLang,
-  useTranslate,
-} from "../src/main";
+import { I18nProvider, useI18n, useLang, useTranslate } from "../src/main";
 
 describe("useI18n", () => {
   it("should get i18n instance", () => {

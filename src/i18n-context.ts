@@ -9,7 +9,7 @@ interface Ctx {
   i18n: I18n;
 }
 
-export const I18nContext = /* @__PURE__ */ createContext<Ctx | null>(null);
+const I18nContext = /* @__PURE__ */ createContext<Ctx | null>(null);
 
 export interface I18nProviderProps {
   i18n: I18n;
