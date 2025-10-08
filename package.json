@@ -31,6 +31,7 @@
     "prepublishOnly": "pnpm run build",
     "lint": "eslint --ext .ts,.tsx . && prettier --check .",
     "test": "jest --coverage",
+    "test:ci": "jest --coverage",
     "types": "cross-env NODE_ENV=production tsc --declaration --emitDeclarationOnly --jsx react --esModuleInterop --outDir dist",
     "docs": "typedoc --options typedoc.json",
     "build": "cross-env NODE_ENV=production tsup src/main.ts",
