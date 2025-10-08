@@ -40,7 +40,7 @@
   },
   "peerDependencies": {
     "react": ">=16",
-    "val-i18n": "0",
+    "val-i18n": ">=0.1.14 <1",
     "use-value-enhancer": "<=5"
   },
   "devDependencies": {
@@ -68,8 +68,9 @@
     "typedoc": "^0.24.8",
     "typescript": "^4.9.5",
     "use-value-enhancer": "^5.0.0",
-    "val-i18n": "^0.1.10",
+    "val-i18n": "^0.1.14",
     "value-enhancer": "^5.0.0",
     "yoctocolors": "^1.0.0"
-  }
+  },
+  "packageManager": "pnpm@9.7.0"
 }

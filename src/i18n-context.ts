@@ -1,9 +1,15 @@
 import type { FC, PropsWithChildren } from "react";
-import type { I18n } from "val-i18n";
+import type { I18n, LocaleLang, TFunction, TFunctionArgs } from "val-i18n";
 
-import { createContext, createElement } from "react";
+import { createContext, createElement, useContext, useMemo } from "react";
+import { useVal } from "use-value-enhancer";
 
-export const I18nContext = /* @__PURE__ */ createContext<I18n | null>(null);
+interface Ctx {
+  t: TFunction;
+  i18n: I18n;
+}
+
+export const I18nContext = /* @__PURE__ */ createContext<Ctx | null>(null);
 
 export interface I18nProviderProps {
   i18n: I18n;
@@ -21,4 +27,46 @@ export interface I18nProviderProps {
 export const I18nProvider: FC<PropsWithChildren<I18nProviderProps>> = ({
   i18n,
   children,
-}) => createElement(I18nContext.Provider, { value: i18n, children });
+}) => {
+  const currentT = useVal(i18n.t$);
+  const depT = useContext(I18nContext)?.t;
+
+  return createElement(I18nContext.Provider, {
+    value: useMemo(
+      () => ({
+        t: depT
+          ? (keyPath: string, args?: TFunctionArgs): string => {
+              const result = currentT(keyPath, args);
+              return result === keyPath ? depT(keyPath, args) : result;
+            }
+          : currentT,
+        i18n,
+      }),
+      [currentT, depT]
+    ),
+    children,
+  });
+};
+
+const useI18nCtx = (): Ctx => {
+  const ctx = useContext(I18nContext);
+  if (!ctx) {
+    throw new Error("I18nProvider not found");
+  }
+  return ctx;
+};
+
+/**
+ * @returns A {@link TFunction} that translates the key from the nearest {@link I18nProvider} and fallbacks outwards.  from the nearest {@link I18nProvider}. Throws if no {@link I18nProvider} found.
+ */
+export const useTranslate = (): TFunction => useI18nCtx().t;
+
+/**
+ * @returns The {@link I18n} instance from the nearest {@link I18nProvider}. Throws if not found.
+ */
+export const useI18n = (): I18n => useI18nCtx().i18n;
+
+/**
+ * @returns The {@link LocaleLang} from the nearest {@link I18nProvider}. Throws if not found.
+ */
+export const useLang = (): LocaleLang => useVal(useI18nCtx().i18n.lang$);

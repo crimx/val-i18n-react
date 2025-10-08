@@ -53,6 +53,38 @@ const App = () => {
 };
 ```
 
+### Cascading I18nProvider
+
+You can nest multiple `<I18nProvider>`s to create cascading i18n contexts.
+
+```tsx
+import { I18n } from "val-i18n";
+import { I18nProvider, useTranslate } from "val-i18n-react";
+
+const baseI18n = new I18n("en", { en: { confirm: "Confirm" } });
+const loginI18n = new I18n("en", { en: { login: "Login" } });
+
+const MyComponent = () => {
+  const t = useTranslate();
+  return (
+    <div>
+      <button>{t("confirm")}</button>
+      <button>{t("login")}</button>
+    </div>
+  );
+};
+
+const App = () => {
+  return (
+    <I18nProvider i18n={baseI18n}>
+      <I18nProvider i18n={loginI18n}>
+        <MyComponent />
+      </I18nProvider>
+    </I18nProvider>
+  );
+};
+```
+
 ### Trans Component
 
 To insert React elements into the translation message:

@@ -36,6 +36,22 @@ describe("Trans", () => {
     expect(container.innerHTML).toBe("a<h1>B</h1>c");
   });
 
+  it("should re-render var", () => {
+    const { container, rerender } = render(
+      <Trans message="a{{b}}c">
+        <h1>B</h1>
+      </Trans>
+    );
+
+    rerender(
+      <Trans message="a{{b}}c">
+        <h1>BB</h1>
+      </Trans>
+    );
+
+    expect(container.innerHTML).toBe("a<h1>BB</h1>c");
+  });
+
   it("should render vars on the side", () => {
     const { container } = render(
       <Trans message="{{a}}b{{c}}">
