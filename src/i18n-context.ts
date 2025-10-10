@@ -48,25 +48,55 @@ export const I18nProvider: FC<PropsWithChildren<I18nProviderProps>> = ({
   });
 };
 
-const useI18nCtx = (): Ctx => {
+interface UseI18nCtx {
+  (): Ctx;
+  (optional?: false): Ctx;
+  (optional?: boolean): Ctx | null;
+}
+
+const useI18nCtx: UseI18nCtx = (optional => {
   const ctx = useContext(I18nContext);
-  if (!ctx) {
+  if (!ctx && !optional) {
     throw new Error("I18nProvider not found");
   }
   return ctx;
-};
+}) as UseI18nCtx;
+
+export interface UseTranslate {
+  (): TFunction;
+  (optional?: false): TFunction;
+  (optional?: boolean): TFunction | undefined;
+}
 
 /**
- * @returns A {@link TFunction} that translates the key from the nearest {@link I18nProvider} and fallbacks outwards.  from the nearest {@link I18nProvider}. Throws if no {@link I18nProvider} found.
+ * @returns A {@link TFunction} that translates the key from the nearest {@link I18nProvider} and fallbacks outwards.
+ * If no {@link I18nProvider} found, throws an error unless `optional` is true.
  */
-export const useTranslate = (): TFunction => useI18nCtx().t;
+export const useTranslate: UseTranslate = (optional =>
+  useI18nCtx(optional)?.t) as UseTranslate;
+
+export interface UseI18n {
+  (): I18n;
+  (optional?: false): I18n;
+  (optional?: boolean): I18n | undefined;
+}
 
 /**
- * @returns The {@link I18n} instance from the nearest {@link I18nProvider}. Throws if not found.
+ * @returns The {@link I18n} instance from the nearest {@link I18nProvider}.
+ * If no {@link I18nProvider} found, throws an error unless `optional` is true.
  */
-export const useI18n = (): I18n => useI18nCtx().i18n;
+export const useI18n: UseI18n = (optional =>
+  useI18nCtx(optional)?.i18n) as UseI18n;
+
+export interface UseLang {
+  (): LocaleLang;
+  (optional?: false): LocaleLang;
+  (optional?: boolean): LocaleLang | undefined;
+}
 
 /**
- * @returns The {@link LocaleLang} from the nearest {@link I18nProvider}. Throws if not found.
+ * @returns The {@link LocaleLang} from the nearest {@link I18nProvider}.
+ * If no {@link I18nProvider} found, throws an error unless `optional` is true.
  */
-export const useLang = (): LocaleLang => useVal(useI18nCtx().i18n.lang$);
+export const useLang: UseLang = (optional =>
+  useVal(useI18n(optional)?.lang$)) as UseLang;
